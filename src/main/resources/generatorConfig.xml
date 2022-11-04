@@ -17,10 +17,12 @@
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
 
+
+
         <!--jdbc的数据库链接，如下为MySQL版本8以上的JDBC驱动-->
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/db_1?serverTimezone=UTC"
-                        userId="root" password="123456"></jdbcConnection>
+                        connectionURL="jdbc:mysql://10.170.173.199:3306/commission?useSSL=false"
+                        userId="test" password="123456@#"></jdbcConnection>
 
         <!--非必须，类型处理器，在数据库类型和java类型之间的转换控制-->
         <javaTypeResolver>
@@ -32,7 +34,7 @@
 
         <!-- targetPackage：生成的实体类所在的包 -->
         <!-- targetProject：生成的实体类所在的位置 -->
-        <javaModelGenerator targetPackage="com.felixwang.site.generator.entity" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.syw.generator.entity" targetProject="src/main/java">
             <!-- 是否容许子包 -->
             <property name="enableSubPackages" value="false"/>
             <!-- 是否对modal添加构造函数 -->
@@ -50,12 +52,12 @@
         </sqlMapGenerator>
 
         <!-- targetPackage 和 targetProject：生成的 interface 文件的包和位置 -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.felixwang.site.generator.dao" targetProject="src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.syw.generator.dao" targetProject="src/main/java">
             <!-- 针对 oracle 数据库的一个配置，是否把 schema 做为字包名 -->
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
         <!-- 须要映射的表，以及对应的实体类名 -->
-        <table tableName="work" domainObjectName="Work"></table>
+        <table tableName="user_behavior" domainObjectName="UserBehavior"></table>
 
     </context>
 </generatorConfiguration>
